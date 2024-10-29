@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coffee Banner Generator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="header">
+    <h1><span class="logo">Go</span>Software</h1>
+    <h2>Coffee Banner Generator</h2>
+  </header>
+
+  <main id="banner-generator">
+    <p>Welcome to the GoSoftware Banner Generator. With this tool, you are able to quickly craft your ideal coffee
+      banner! Choose your blend and customize every detail for a captivating brew display.</p>
+    <p>Simply complete the three easy steps below, and see your preview update as you go. Then view, copy, and paste.
+    </p>
+
+    <!-- Step 1: Coffee Type Selection -->
+    <div id="step1" class="step card">
+      <h3 class="step-title">1. Select your coffee</h3>
+      <label>
+        <input type="radio" name="coffee-temp" value="hot" checked> Hot coffee
+      </label>
+      <label>
+        <input type="radio" name="coffee-temp" value="iced"> Iced coffee
+      </label>
+      <select id="coffee-type" disabled></select>
+      <button id="next1" class="btn" disabled>Next step</button>
+    </div>
+
+    <!-- Step 2: Width and Image Toggle -->
+    <div id="step2" class="step card">
+      <h3 class="step-title">2. Choose your width</h3>
+      <div class="width-options">
+        <label><input type="radio" name="width" value="160px"> 160 px</label>
+        <label><input type="radio" name="width" value="300px" checked> 300 px</label>
+        <label><input type="radio" name="width" value="100%"> 100 %</label>
+        <label>
+          <input type="radio" name="width" value="custom"> Custom
+          <input type="number" id="custom-width" placeholder="Enter width in px" style="display: none;">
+        </label>
+      </div>
+      <label class="show-image-toggle">
+        <input type="checkbox" id="show-image"> Show Coffee Image
+      </label>
+      <button id="next2" class="btn">Next step</button>
+    </div>
+
+    <!-- Step 3: Title, Description, and Generate Code -->
+    <div id="step3" class="step card">
+      <h3 class="step-title">3. Customize title and description</h3>
+      <input type="text" id="title" placeholder="Enter title">
+      <textarea id="description" placeholder="Enter description"></textarea>
+      <div class="actions">
+        <button id="start-over" class="btn">Start over ↩</button>
+        <button id="view-and-copy" class="btn primary">👁️ View and copy code</button>
+      </div>
+    </div>
+
+    <!-- Preview Section -->
+    <div class="preview-section">
+      <h3>Preview:</h3>
+      <div id="preview" class="preview-content">
+        <!-- Generated content will appear here -->
+      </div>
+    </div>
+
+    <!-- Modal for Generated Code -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <pre id="generated-code"></pre>
+        <button id="copy" class="btn primary">Copy to Clipboard</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
